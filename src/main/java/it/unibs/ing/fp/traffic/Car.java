@@ -5,4 +5,9 @@ public class Car implements Item {
 	public String getSymbol() {
 		return "C";
 	}
+	
+	@Override
+	public Position moveFrom(Position position) {
+		return null;
+	}
 }

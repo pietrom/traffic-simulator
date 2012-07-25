@@ -6,5 +6,9 @@ public class Pedestrian implements Item {
 	public String getSymbol() {
 		return "P";
 	}
-
+	
+	@Override
+	public Position moveFrom(Position position) {
+		return null;
+	}
 }

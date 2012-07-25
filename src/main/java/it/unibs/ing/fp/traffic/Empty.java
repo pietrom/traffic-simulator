@@ -5,4 +5,9 @@ public class Empty implements Item {
 	public String getSymbol() {
 		return " ";
 	}
+
+	@Override
+	public Position moveFrom(Position position) {
+		return position;
+	}
 }
