@@ -8,6 +8,6 @@ public class Car implements Item {
 	
 	@Override
 	public Position moveFrom(Position position) {
-		return null;
+		return position.bottom(2);
 	}
 }

@@ -9,6 +9,6 @@ public class Pedestrian implements Item {
 	
 	@Override
 	public Position moveFrom(Position position) {
-		return null;
+		return position.right(1);
 	}
 }

@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class EmptyTest {
-	private static final Position POSITION_2_2 = new Position(2, 2);
 	private Item empty;
 	
 	@Before
@@ -21,7 +20,7 @@ public class EmptyTest {
 	
 	@Test
 	public void emptySpaceDoesntMove() throws Exception {
-		Position next = empty.moveFrom(POSITION_2_2);
-		assertEquals(POSITION_2_2, next);
+		Position next = empty.moveFrom(ObjectMother.POSITION_2_2);
+		assertEquals(ObjectMother.POSITION_2_2, next);
 	}
 }

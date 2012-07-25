@@ -32,4 +32,12 @@ public class Position {
 			return false;
 		return true;
 	}
+
+	public Position right(int amount) {
+		return new Position(x + amount, y);
+	}
+
+	public Position bottom(int amount) {
+		return new Position(x, y + amount);
+	}
 }
