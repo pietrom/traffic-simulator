@@ -40,4 +40,12 @@ public class Position {
 	public Position bottom(int amount) {
 		return new Position(x, y + amount);
 	}
+
+	public int getX() {
+		return x;
+	}
+	
+	public int getY() {
+		return y;
+	}
 }
