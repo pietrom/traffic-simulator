@@ -1,6 +1,7 @@
 package it.unibs.ing.fp.traffic;
 
 import static org.junit.Assert.*;
+import static it.unibs.ing.fp.traffic.ObjectMother.*;
 
 import org.junit.Test;
 
@@ -13,5 +14,15 @@ public class RoadTest {
 				assertTrue(road.getItemAt(new Position(i, j)) instanceof Empty);
 			}
 		}
+	}
+	
+	@Test
+	public void setUpSpecifiedItem() throws Exception {
+		Road road = new Road(5, 10);
+		road.setItemAt(POSITION_2_2, JOE);
+		road.setItemAt(POSITION_2_4, PANDA);
+		
+		assertEquals(JOE, road.getItemAt(POSITION_2_2));
+		assertEquals(PANDA, road.getItemAt(POSITION_2_4));
 	}
 }

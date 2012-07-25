@@ -15,4 +15,8 @@ public class Road {
 	public Item getItemAt(Position position) {
 		return this.map[position.getX()][position.getY()];
 	}
+
+	public void setItemAt(Position position, Item item) {
+		this.map[position.getX()][position.getY()] = item;
+	}
 }
