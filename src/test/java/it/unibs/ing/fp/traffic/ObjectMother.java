@@ -4,6 +4,7 @@ public class ObjectMother {
 	static final Position POSITION_2_2 = new Position(2, 2);
 	static final Position POSITION_2_3 = new Position(2, 3);
 	static final Position POSITION_2_4 = new Position(2, 4);
+	static final Position POSITION_2_5 = new Position(2, 5);
 	static final Position POSITION_1_4 = new Position(1, 4);
 	static final Position POSITION_3_2 = new Position(3, 2);
 	static final Position POSITION_2_6 = new Position(2, 6);
@@ -12,4 +13,5 @@ public class ObjectMother {
 	
 	static final Pedestrian JOE = new Pedestrian();
 	static final Car PANDA = new Car();
+	static final Cyclist MERCKX = new Cyclist();
 }

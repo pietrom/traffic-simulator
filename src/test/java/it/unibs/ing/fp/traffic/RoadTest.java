@@ -95,4 +95,23 @@ public class RoadTest {
 		}
 		return count;
 	}
+	
+	@Test
+	public void collisionBetweenCarAndCyclistResultsInCarsDisappearance() throws Exception {
+		road.setItemAt(POSITION_2_2, PANDA);
+		road.setItemAt(POSITION_2_3, MERCKX);
+		road.simulate();
+		
+		assertEquals(MERCKX, road.getItemAt(POSITION_2_4));
+	}
+	
+	@Test
+	public void movementOrderDoesntMatter() throws Exception {
+		road.setItemAt(POSITION_2_2, MERCKX);
+		road.setItemAt(POSITION_2_3, PANDA);
+		road.simulate();
+		
+		assertEquals(MERCKX, road.getItemAt(POSITION_2_3));
+		assertEquals(PANDA, road.getItemAt(POSITION_2_5));
+	}
 }

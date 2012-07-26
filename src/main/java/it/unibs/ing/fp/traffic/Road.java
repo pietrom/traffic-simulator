@@ -31,13 +31,17 @@ public class Road {
 		for(int i = 0; i < map.length; i++) {
 			for(int j = 0; j < map[0].length; j++) {
 				final Position newPosition = map[i][j].moveFrom(new Position(i, j));
-				if(newPositionIsValid(newPosition) && newPositionIsAvailable(newMap, newPosition)) {
+				if(newPositionIsValid(newPosition) && (newPositionIsAvailable(newMap, newPosition) || isOverWriteCondition(map[i][j], newMap, newPosition))) {
 					newMap[newPosition.getX()][newPosition.getY()] = map[i][j];
 				}
 			}
 		}
 		map = newMap;
 		fillNullItemsUsingEmptySpaces();
+	}
+
+	private boolean isOverWriteCondition(Item item, Item[][] newMap, Position newPosition) {
+		return item.canOverwrite(newMap[newPosition.getX()][newPosition.getY()]);
 	}
 
 	private boolean newPositionIsValid(Position newPosition) {
