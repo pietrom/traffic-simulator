@@ -62,12 +62,7 @@ public class RoadTest {
 	}
 	
 	private void assertRoadFilledByEmptySpaces() {
-		for(int i = 0; i < 5; i++) {
-			for(int j = 0; j < 10; j++) {
-				assertTrue(road.getItemAt(new Position(i, j)) instanceof Empty);
-			}
-		}
-		
+		assert(5 * 10 == emptyItemsCount());
 	}
 	
 	@Test
@@ -76,5 +71,28 @@ public class RoadTest {
 		road.setItemAt(POSITION_2_9_BOTTOM_BORDER, PANDA);
 		road.simulate();
 		assertRoadFilledByEmptySpaces();
+	}
+	
+	@Test
+	public void carDisappearsWhenCollidingWithAPedestrian() throws Exception {
+		road.setItemAt(POSITION_1_4, JOE);
+		road.setItemAt(POSITION_2_2, PANDA);
+		road.simulate();
+		
+		assertEquals(JOE, road.getItemAt(POSITION_2_4));
+		assertEquals(5 * 10 - 1, emptyItemsCount());
+	}
+
+	private int emptyItemsCount() {
+		int count = 0;
+		for(int i = 0; i < 5; i++) {
+			for(int j = 0; j < 10; j++) {
+				
+				if(road.getItemAt(new Position(i, j)) instanceof Empty) {
+					count++;
+				}
+			}
+		}
+		return count;
 	}
 }
