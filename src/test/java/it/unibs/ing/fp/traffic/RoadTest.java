@@ -69,4 +69,12 @@ public class RoadTest {
 		}
 		
 	}
+	
+	@Test
+	public void dynamicItemsExitTheRoad() throws Exception {
+		road.setItemAt(POSITION_4_4_RIGHT_BORDER, JOE);
+		road.setItemAt(POSITION_2_9_BOTTOM_BORDER, PANDA);
+		road.simulate();
+		assertRoadFilledByEmptySpaces();
+	}
 }

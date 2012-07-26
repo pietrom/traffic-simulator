@@ -31,12 +31,21 @@ public class Road {
 		for(int i = 0; i < map.length; i++) {
 			for(int j = 0; j < map[0].length; j++) {
 				final Position newPosition = map[i][j].moveFrom(new Position(i, j));
-				if(newMap[newPosition.getX()][newPosition.getY()] == null) {
+				if(newPositionIsValid(newPosition) && newPositionIsAvailable(newMap, newPosition)) {
 					newMap[newPosition.getX()][newPosition.getY()] = map[i][j];
 				}
 			}
 		}
 		map = newMap;
 		fillNullItemsUsingEmptySpaces();
+	}
+
+	private boolean newPositionIsValid(Position newPosition) {
+		return newPosition.getX() < map.length && newPosition.getY() < map[0].length;
+	}
+
+	private boolean newPositionIsAvailable(final Item[][] newMap,
+			final Position newPosition) {
+		return newMap[newPosition.getX()][newPosition.getY()] == null;
 	}
 }
