@@ -106,6 +106,15 @@ public class RoadTest {
 	}
 	
 	@Test
+	public void collisionBetweenPedestrianAndCyclistResultsInPedestriansDisappearance() throws Exception {
+		road.setItemAt(POSITION_1_4, JOE);
+		road.setItemAt(POSITION_2_3, MERCKX);
+		road.simulate();
+		
+		assertEquals(MERCKX, road.getItemAt(POSITION_2_4));
+	}
+	
+	@Test
 	public void movementOrderDoesntMatter() throws Exception {
 		road.setItemAt(POSITION_2_2, MERCKX);
 		road.setItemAt(POSITION_2_3, PANDA);
