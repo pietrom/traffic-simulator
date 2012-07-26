@@ -20,7 +20,7 @@ public class CarTest {
 	}
 	
 	@Test
-	public void pedestrianMovesToBottom() {
+	public void carMovesToBottom() {
 		assertEquals(POSITION_2_4, car.moveFrom(POSITION_2_2));
 	}
 }
