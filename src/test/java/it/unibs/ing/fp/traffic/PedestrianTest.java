@@ -1,5 +1,6 @@
 package it.unibs.ing.fp.traffic;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 import static it.unibs.ing.fp.traffic.ObjectMother.*;
 
@@ -21,5 +22,15 @@ public class PedestrianTest {
 	@Test
 	public void pedestrianMovesToRight() {
 		assertEquals(POSITION_3_2, pedestrian.moveFrom(POSITION_2_2));
+	}
+	
+	@Test
+	public void pedestrianCantOverwriteCyclist() throws Exception {
+		assertFalse(JOE.canOverwrite(MERCKX));
+	}
+	
+	@Test
+	public void pedestrianCanOverwriteCar() throws Exception {
+		assertTrue(JOE.canOverwrite(PANDA));
 	}
 }
