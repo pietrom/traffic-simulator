@@ -8,10 +8,6 @@ public abstract class Item {
 
 	public abstract boolean canOverwrite(Item item);
 
-	public boolean canBeOverwrittenBy(Item item) {
-		return false;
-	}
-	
 	public boolean canBeOverwrittenBy(Cyclist cyclist) {
 		return false;
 	}
