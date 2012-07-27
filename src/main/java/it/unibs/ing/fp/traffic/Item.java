@@ -15,4 +15,8 @@ public abstract class Item {
 	public boolean canBeOverwrittenBy(Cyclist cyclist) {
 		return false;
 	}
+	
+	public boolean canBeOverwrittenBy(Pedestrian cyclist) {
+		return false;
+	}
 }

@@ -19,4 +19,8 @@ public class Car extends Item {
 	public boolean canBeOverwrittenBy(Cyclist cyclist) {
 		return true;
 	}
+	
+	public boolean canBeOverwrittenBy(Pedestrian cyclist) {
+		return true;
+	}
 }
