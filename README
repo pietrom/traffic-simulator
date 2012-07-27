@@ -1,2 +1,4 @@
 Simple traffic simulator for University
 See http://tritone.ing.unibs.it/fp/Esercitazioni/SimulazioneTraffico.pdf for complete specification (italian)
+
+See test coverage report on http://pietrom.github.com/traffic-simulator/coverage . Report powered by Cobertura.
