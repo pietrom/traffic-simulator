@@ -16,7 +16,7 @@ public class PedestrianTest {
 	}
 	@Test
 	public void pedestrianHasHisOwnSymbol() throws Exception {
-		assertEquals("PP", pedestrian.getSymbol());
+		assertEquals("P", pedestrian.getSymbol());
 	}
 	
 	@Test
